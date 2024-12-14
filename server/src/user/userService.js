@@ -3,7 +3,7 @@ const userModel = require('./userModel');
 // Fetch all users from the database
 const getDataFromDB = async () => {
     try {
-        console.log('Fetching all users from the database...');
+        //console.log('Fetching all users from the database...');
         const users = await userModel.find({});
         console.log('Users fetched successfully:', users);
         return users;
@@ -16,7 +16,7 @@ const getDataFromDB = async () => {
 // Create a new user in the database
 const createUserInDB = async (userData) => {
     try {
-        console.log('Saving new user to the database...');
+        //console.log('Saving new user to the database...');
         const newUser = new userModel(userData);
         await newUser.save();
         console.log('User saved successfully');

@@ -1,6 +1,4 @@
 require('dotenv').config();
-console.log('MONGO_URI:', process.env.MONGO_URI);
-console.log('MONGO_DB:', process.env.DATABASE);
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -14,10 +12,11 @@ app.use(express.json());
 app.use(cors());
 app.use(routes);
 
-const databaseName = process.env.DATABASE || 'default_db';
+// const databaseName = process.env.DATABASE || 'default_db';
 // Connect MongoDB
-mongoose.connect(`${process.env.MONGO_URI}/${databaseName}`)
-.then(() => console.log(`Connected to MongoDB Database: ${databaseName}`))
+// mongoose.connect(`${process.env.MONGO_URI}/${databaseName}`)
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log(`Connected to MongoDB Database`))
 .catch(err => console.log('Server MongoDB Connection Error: ', err));
 
 const PORT = process.env.PORT || 5000;
