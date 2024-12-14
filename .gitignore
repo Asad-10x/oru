@@ -1,0 +1,47 @@
+# This is my sole git ignore file that handles the folders to ignore for both server & ui. 
+
+/server/node_modules
+/ui/node_modules
+
+## merged
+# Compiled output
+/dist
+ui/tmp
+ui/out-tsc
+ui/bazel-out
+
+# Node
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+/ui/.vscode
+/ui/.angular
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+ui/.angular/cache
+ui/.sass-cache/
+ui/connect.lock
+ui/coverage
+ui/libpeerconnection.log
+testem.log
+ui/typings
+
+# System files
+.DS_Store
+Thumbs.db
