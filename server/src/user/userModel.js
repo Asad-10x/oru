@@ -20,8 +20,10 @@ const userSchema = new Schema({
         required: true,
     },
     role: {
-        type: Number,
+        type: String,
         required: true,
+        default:"Member",
+        enum: ["Lead", "Admin", "Member"]
     },
 }, {
     collection: 'users',
