@@ -1,0 +1,34 @@
+<body>
+    <app-navbar></app-navbar>
+
+
+    <form class="container" [formGroup]="userForm">
+        <label class="form-label">Email: </label>
+        <input type="email" formControlName="email">
+        <!-- Validation -->
+        <div class="validation-err" *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched || userForm.controls['email'].dirty)">
+            <span *ngIf="userForm.controls['email'].errors?.['required']"> Email is Required. </span>
+            <span *ngIf="userForm.controls['email'].errors?.['email']"> Enter a valid Email. </span>
+        </div>
+
+        <br><br>
+
+        <label class="form-label">Password: </label>
+        <input type="email" formControlName="password">
+        <div class="validation-err" *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched || userForm.controls['password'].dirty)">
+            <span *ngIf="userForm.controls['password'].errors?.['required']"> Password is Required. </span>
+            <span *ngIf="userForm.controls['password'].errors?.['minlength']"> Password should atleast be 6 characters. </span>
+        </div>
+
+        <button type="submit" [disabled]="userForm.invalid" (click)="onSubmit(userForm)"> Login </button>
+        <br>
+
+        <a  id="forgottenPass-prompt" routerLink='/forgottenpassword'> Forgotten Password? </a>
+        <p id="signup-prompt">Don't have an account? <a routerLink="/signup"> Signup </a> </p>
+
+
+
+
+    </form>
+
+</body>

@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    align-items: center;
+
+    .app-title {
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-left: 12px;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    button {
+        color: #ffffff;
+    }
+}
