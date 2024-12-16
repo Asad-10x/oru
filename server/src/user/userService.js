@@ -1,4 +1,43 @@
 const userModel = require('./userModel');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
+
+// Authenticate user and generate JWT
+const loginUserInDB = async (email, password) => {
+    try {
+        const user = await userModel.findOne({ email });
+        if (!user) {
+            throw new Error('User not found');
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            throw new Error('Invalid credentials');
+        }
+
+        const token = jwt.sign(
+            { id: user._id, email: user.email, role: user.role },
+            process.env.SECRET_KEY,
+            { expiresIn: '1h' }
+        );
+
+        return { token, user };
+    } catch (error) {
+        console.error('Error during login:', error.message);
+        throw error;
+    }
+};
+
+// Verify JWT and return user data
+const verifyToken = (token) => {
+    try {
+        return jwt.verify(token, process.env.SECRET_KEY);
+    } catch (error) {
+        console.error('Invalid token:', error.message);
+        throw new Error('Unauthorized');
+    }
+};
 
 // Fetch all users from the database
 const getDataFromDB = async () => {
@@ -27,4 +66,4 @@ const createUserInDB = async (userData) => {
     }
 };
 
-module.exports = { getDataFromDB, createUserInDB };
+module.exports = { getDataFromDB, createUserInDB, loginUserInDB, verifyToken };
