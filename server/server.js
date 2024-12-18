@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./route/userRoutes');
+const taskRoutes = require("./route/taskRoutes");
 const { connectDB } = require('./db/connection');
 
 // Initializing Express app
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/v1/users",userRoutes);
+app.use("/api/v1/tasks",taskRoutes);
 
 
 

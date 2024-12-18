@@ -1,4 +1,5 @@
-const taskSchema = new Schema({
+const mongoose=require("mongoose");
+const taskSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String },
     status: { 
@@ -6,10 +7,10 @@ const taskSchema = new Schema({
         enum: ['pending', 'ongoing', 'completed'], 
         default: 'pending' 
     },
-    assignedTo: { type: Schema.Types.ObjectId, ref: 'User' },
-    createdBy: { type: Schema.Types.ObjectId, ref: 'User' },
-    parentTask: { type: Schema.Types.ObjectId, ref: 'Task', default: null }, // Link to parent task if this is a sub-task
-    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    parentTask: { type: mongoose.Schema.Types.ObjectId, ref: 'Task', default: null }, // Link to parent task if this is a sub-task
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
 }, {
     timestamps: true,
     collection: 'tasks',

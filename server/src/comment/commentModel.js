@@ -1,6 +1,8 @@
-const commentSchema = new Schema({
-    taskId: { type: Schema.Types.ObjectId, ref: 'Task', required: true }, // Link comment to a task
-    commenter: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+const mongoose=require("mongoose");
+
+const commentSchema = new mongoose.Schema({
+    taskId: { type: mongoose.Schema.Types.ObjectId, ref: 'Task', required: true }, // Link comment to a task
+    commenter: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     content: { type: String, required: true },
     timestamp: { type: Date, default: Date.now },
 }, {
