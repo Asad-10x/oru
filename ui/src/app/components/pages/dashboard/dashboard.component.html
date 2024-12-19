@@ -1,0 +1,23 @@
+<div class="dashboard">
+    <h1>Task Dashboard</h1>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Task Listing -->
+    <div *ngIf="tasks.length > 0; else noTasks" class="tasks">
+      <div class="task-card" *ngFor="let task of tasks">
+        <h2>{{ task.title }}</h2>
+        <p><strong>Status:</strong> {{ task.status }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Assigned To:</strong> {{ task.assignedTo?.f_name || "Not assigned" }} {{ task.assignedTo?.l_name }}</p>
+      </div>
+    </div>
+
+    <!-- No Tasks Template -->
+    <ng-template #noTasks>
+      <p>No tasks found. Start by creating one!</p>
+    </ng-template>
+  </div>
