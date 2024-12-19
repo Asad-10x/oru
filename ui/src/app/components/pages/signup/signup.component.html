@@ -1,0 +1,54 @@
+<body>
+    <app-navbar></app-navbar>
+
+    <div class="container">
+        <form class="sform" [formGroup]="userForm ">
+            <label class="form-label"> First Name:</label>
+            <input type="text" formControlName="f_name">
+            <div class="validation-err" *ngIf="userForm.controls['f_name'].invalid && (userForm.controls['f_name'].touched || userForm.controls['f_name'].dirty)">
+                <span *ngIf="userForm.controls['f_name'].errors?.['required']"> First Name is required. </span>
+            </div>
+
+            <br>
+
+            <label class="form-label"> Last Name:</label>
+            <input type="text" formControlName="l_name">
+            <div class="validation-err" *ngIf="userForm.controls['l_name'].invalid && (userForm.controls['l_name'].touched || userForm.controls['l_name'].dirty)">
+                <span *ngIf="userForm.controls['l_name'].errors?.['required']"> Last Name is required. </span>
+                <span *ngIf="userForm.controls['l_name'].errors?.['minlength']"> Last Name should atleast be 3 characters. </span>
+            </div>
+
+            <br>
+
+            <label class="form-label"> Email:</label>
+            <input type="email" formControlName="email">
+            <div class="validation-err" *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched || userForm.controls['email'].dirty)">
+                <span *ngIf="userForm.controls['email'].errors?.['required']"> Email is required. </span>
+                <span *ngIf="userForm.controls['email'].errors?.['email']"> Enter a Proper Email. </span>
+            </div>
+
+            <br>
+
+            <label class="form-label"> Password:</label>
+            <input type="password" formControlName="password">
+            <div class="validation-err" *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched || userForm.controls['password'].dirty)">
+                <span *ngIf="userForm.controls['password'].errors?.['required']"> Password is required. </span>
+                <span *ngIf="userForm.controls['password'].errors?.['minlength']"> Password should atleast be 6 characters. </span>
+            </div>
+
+            <!-- find a way to bind the role:boolean -->
+            <label class="form-label"> Role:</label>
+            <select id="user-role" formControlName="role">
+                <option value="false"> Member </option>
+                <option value="true"> Leader </option>
+            </select>
+
+
+            <br> <br> <br>
+            <button type="submit" [disabled]="userForm.invalid" (click)="onSubmit(userForm)"> Signup! </button>
+
+            <p>Already have an account ? <a routerLink="/login">Login</a>.</p>
+
+        </form>
+    </div>
+</body>

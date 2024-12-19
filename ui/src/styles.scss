@@ -1,1 +1,158 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//// Base Reset for Angular Material
+//@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+//
+//// Light-Groovebox Theme Configuration
+//$primary-color: #6a9fb5; // Groovebox blue
+//$secondary-color: #f0dfaf; // Soft beige
+//$accent-color: #dca3a3; // Pastel red
+//$background-color: #fdf6e3; // Light groovebox background
+//$text-color: #3c3836; // Dark groovebox text
+//$muted-color: #a89984; // Muted text color
+//
+//// CSS Variables for Easy Access
+//:root {
+//    --primary-color: #{$primary-color};
+//    --secondary-color: #{$secondary-color};
+//    --accent-color: #{$accent-color};
+//    --background-color: #{$background-color};
+//    --text-color: #{$text-color};
+//    --muted-color: #{$muted-color};
+//    --primary-hover: darken(#{$primary-color}, 10%);
+//    --accent-hover: darken(#{$accent-color}, 10%);
+//}
+//
+//// Global Body Styles
+//body {
+//    font-family: 'Roboto', sans-serif;
+//    font-size: 16px;
+//    margin: 0;
+//    padding: 0;
+//    background-color: var(--background-color);
+//    color: var(--text-color);
+//}
+//
+//// Angular Material Component Overrides
+//.mat-toolbar {
+//    background-color: var(--primary-color);
+//    color: var(--secondary-color);
+//}
+//
+//.mat-icon-button {
+//    color: var(--secondary-color);
+//
+//    &:hover {
+//        color: var(--primary-hover);
+//    }
+//}
+//
+//.mat-button {
+//    background-color: var(--accent-color);
+//    color: var(--secondary-color);
+//
+//    &:hover {
+//        background-color: var(--accent-hover);
+//    }
+//}
+//
+//// Typography
+//h1, h2, h3, h4, h5, h6 {
+//    font-weight: bold;
+//    color: var(--text-color);
+//}
+//
+//p, span, a {
+//    color: var(--text-color);
+//    line-height: 1.5;
+//}
+//
+//// Cards and Containers
+//.mat-card {
+//    background-color: var(--background-color);
+//    border: 1px solid var(--muted-color);
+//    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//}
+//
+//.mat-card-title {
+//    color: var(--text-color);
+//}
+//
+//.mat-card-subtitle {
+//    color: var(--muted-color);
+//}
+//
+//// Inputs and Forms
+//.mat-input-element {
+//    color: var(--text-color);
+//}
+//
+//.mat-form-field-underline {
+//    background-color: var(--primary-color);
+//}
+//
+//.mat-form-field-label {
+//    color: var(--muted-color);
+//}
+//
+//.mat-form-field-label.mat-focused {
+//    color: var(--accent-color);
+//}
+//
+//// Buttons
+//button {
+//    border: none;
+//    cursor: pointer;
+//    padding: 8px 16px;
+//    border-radius: 4px;
+//    transition: background-color 0.3s;
+//
+//    &.primary {
+//        background-color: var(--primary-color);
+//        color: var(--secondary-color);
+//
+//        &:hover {
+//            background-color: var(--primary-hover);
+//        }
+//    }
+//
+//    &.accent {
+//        background-color: var(--accent-color);
+//        color: var(--background-color);
+//
+//        &:hover {
+//            background-color: var(--accent-hover);
+//        }
+//    }
+//}
+//
+//// Progress Bar
+//.mat-progress-bar-fill::after {
+//    background-color: var(--primary-color);
+//}
+//
+//// Sidebar
+//.mat-sidenav {
+//    background-color: var(--background-color);
+//    color: var(--text-color);
+//}
+//
+//// Miscellaneous
+//hr {
+//    border: 0;
+//    border-top: 1px solid var(--muted-color);
+//    margin: 20px 0;
+//}
+//
+//a {
+//    color: var(--primary-color);
+//    text-decoration: none;
+//
+//    &:hover {
+//        text-decoration: underline;
+//    }
+//}
+//
