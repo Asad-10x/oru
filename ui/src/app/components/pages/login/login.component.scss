@@ -1,0 +1,109 @@
+// body {
+//     margin: 0;
+//     font-family: 'Roboto', sans-serif;
+//     background-color: var(--background-color);
+//     color: var(--text-color);
+
+//     // Container for Form
+//     .container {
+//         max-width: 400px;
+//         margin: 50px auto;
+//         padding: 20px;
+//         background-color: var(--background-color);
+//         border: 1px solid var(--muted-color);
+//         border-radius: 8px;
+//         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+//         form {
+//             display: flex;
+//             flex-direction: column;
+
+//             div {
+//                 margin-bottom: 20px;
+
+//                 label {
+//                     display: block;
+//                     font-weight: bold;
+//                     margin-bottom: 5px;
+//                     color: var(--text-color);
+//                 }
+
+//                 input {
+//                     width: 95%;
+//                     padding: 10px;
+//                     font-size: 1rem;
+//                     border: 1px solid var(--muted-color);
+//                     border-radius: 4px;
+//                     background-color: var(--background-color);
+//                     color: var(--text-color);
+//                     transition: border-color 0.3s, box-shadow 0.3s;
+
+//                     &:focus {
+//                         outline: none;
+//                         border-color: var(--primary-color);
+//                         box-shadow: 0px 0px 4px var(--primary-color);
+//                     }
+//                 }
+
+//                 // Error Message
+//                 div {
+//                     margin-top: 5px;
+//                     font-size: 0.9rem;
+//                     color: var(--accent-color);
+//                 }
+//             }
+
+//             button {
+//                 padding: 10px;
+//                 font-size: 1rem;
+//                 font-weight: bold;
+//                 border: none;
+//                 border-radius: 4px;
+//                 background-color: var(--primary-color);
+//                 color: var(--secondary-color);
+//                 cursor: pointer;
+//                 transition: background-color 0.3s, transform 0.2s;
+
+//                 &:hover {
+//                     background-color: var(--primary-hover);
+//                     transform: translateY(-2px);
+//                 }
+
+//                 &:disabled {
+//                     background-color: var(--muted-color);
+//                     cursor: not-allowed;
+//                     transform: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+/* Form Styles */
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.validation-err {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
