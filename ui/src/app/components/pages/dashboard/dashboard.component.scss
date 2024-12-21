@@ -1,0 +1,38 @@
+.dashboard {
+    padding: 2rem;
+  
+    .error {
+      color: red;
+      margin-bottom: 1rem;
+    }
+  
+    .tasks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+  
+      .task-card {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        h2 {
+          margin: 0 0 0.5rem;
+          font-size: 1.5rem;
+          color: #333;
+        }
+  
+        p {
+          margin: 0.25rem 0;
+          color: #555;
+  
+          strong {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  
